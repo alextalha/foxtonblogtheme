@@ -1,0 +1,61 @@
+/*!
+ * Start Bootstrap - Full Width Pics (https://startbootstrap.com/template-overviews/full-width-pics)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-full-width-pics/blob/master/LICENSE)
+ */
+
+
+@media (min-width: 992px) {
+        body {
+      
+        }
+}
+
+.destaque-categoria{
+   background-color: black; 
+   color: white;
+   position:relative;
+}
+
+
+p.destaque-texto{
+   color: white;
+   font-weight: bold;
+   font-size: 31px;
+   font-family: sans-serif;
+   
+        
+}
+
+.bg-image-full {
+   background: no-repeat center center scroll;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+    background-size: cover;
+   -o-background-size: cover;
+}
+
+
+.destaque-2-imagem {
+   display: block;
+   width: 100%;
+   height: auto;
+   background-position: center center;
+   position: relative;
+}
+
+
+.no-gutters {
+   margin-right: 0;
+   margin-left: 0;
+ 
+ }
+
+
+ p.veja-tambem {
+   padding-bottom: 1px;
+   font-size: 22px;
+   font-weight: bold;
+   padding-left: 57px;
+   padding-top: 15px;
+}
