@@ -10,98 +10,110 @@
 ?>
 <?php  get_header() ?>
 
-
- <!-- Header - Notícia Destaque -->
- <header class="py-5 bg-image-full" style=" height:870px;background-image: url('https://unsplash.it/1900/1080?image=1076');">
-	  <div class="container">
-        <div class="mensagem-display">
-          <div class="d-flex flex-row">
-            <div class="p-2 destaque-categoria">Fábrica</div>
-          </div>	 
-            <p class='destaque-texto'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
-        </div>]
-    </div>
-    </header>
-
     <!-- Sessão do Conteúdo-->
 
-      <div class="container-fluid p-md-0">
-		    <div class="row no-gutters">
-          <div class="mix col-lg-6 col-md-6">
-            One of three columns
-          </div>
-          
-				  <div class="mix col-lg-6 col-md-6">
-				    <img class='destaque-2-imagem ' src="https://picsum.photos/945/637?image=1075" />
-          </div>
+    <header class="masthead text-white text-center" style="background:url('<?php echo get_template_directory_uri() ?>/assets/img/destaque.png')no-repeat center center;background-size:cover;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 mb-3 mx-auto text-left"><span class="categoria">Categoria</span></div>
+                <div class="col-xl-12 mx-auto">
+                    <h1 class="mb-5"><p class="text-justify destaque">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non faucibus leo. Ut tristique finibus est et viverra. Aliquam fringilla sapien sed mi sagittis vestibulum non&nbsp;<br><br></p></h1>
+                </div>
+            </div>
         </div>
-
-        <div class="row no-gutters">
-          <div class="mix col-lg-6 col-md-6">
-            <img class='destaque-2-imagem ' src="https://picsum.photos/945/637?image=1075" />
-          </div>
-        
-				  <div class="mix col-lg-6 col-md-6">
-            One of three columns
-				  </div>
-		    </div>
-		</div>
-
-    <div class="container-fluid">
-
-      <div class="row"><p class="veja-tambem"> Veja Também</p> </div>
-
-      <div class='row no-gutters'>
-       
-          <div class="col-md-3">
-            <div class="veja-tambem-imagem text-center align-middle">
-              <img class="img-fluid" src="https://picsum.photos/300/300?image=1061" />
+    </header>
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image:url('<?php echo get_template_directory_uri() ?>/assets/img/imagem2.png');"><span></span></div>
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                  <div class="text-left mb-4"><span class="categoria">Categoria</span></div>
+                      <h6 class="mt-4">JOSÉ CAMARANO</h6>
+                      <p class="lead mb-0 mt-5 segundo-destaque"> José Camarano é mineiro, mas sua alma, carioca. Multifacetado, coleciona talentos e conquistas: é stylist, diretor de conteúdo para web, consultor de moda e lifestyle, dono da agencia criativa Hale.ag... e o que mais a sua criatividade permitir que ele seja. Depois de uma temporada internacional em Nova York, com direito a um período pé no freio se reconectando com a natureza no Havaí, Camarano está de volta ao Brasil e contou pra gente como ele enxerga e reconhece o sucesso.</p>
+                      <div class="text-left mb-4 mt-4"><span><a class="ver-mais" href="#" > VER MAIS </a></span></div>
+                </div>
+                
             </div>
-
-          </div>
-
-          <div class="col-md-3">
-            <div class="veja-tambem-imagem text-center">
-                <img class="img-fluid" src="https://picsum.photos/300/300?image=1062" />
+            <div class="row no-gutters">
+                <div class="col-lg-6 text-white showcase-img" style="background-image:url('<?php echo get_template_directory_uri() ?>/assets/img/imagem1.png');"><span></span></div>
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                <div class="text-left mb-4 mt-5"><span class="categoria">Categoria</span></div>
+                    <h6 class="mt-4">JOSÉ CAMARANO</h6>
+                    <p class="lead mb-0 mt-5 segundo-destaque"> José Camarano é mineiro, mas sua alma, carioca. Multifacetado, coleciona talentos e conquistas: é stylist, diretor de conteúdo para web, consultor de moda e lifestyle, dono da agencia criativa Hale.ag... e o que mais a sua criatividade permitir que ele seja. Depois de uma temporada internacional em Nova York, com direito a um período pé no freio se reconectando com a natureza no Havaí, Camarano está de volta ao Brasil e contou pra gente como ele enxerga e reconhece o sucesso.</p>
+                    <div class="text-left mb-4 mt-4"><span><a class="ver-mais" href="#" > VER MAIS </a></span></div>
+                </div>
             </div>
-          </div>
-
-
-          <div class="col-md-3">
-            <div class="veja-tambem-imagem text-center">
-              <img class="img-fluid" src="https://picsum.photos/300/300?image=1063" />
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="veja-tambem-imagem text-center">
-              <img class="img-fluid" src="https://picsum.photos/300/300?image=1064" />
-            </div>
-          </div>
-
         </div>
-    </div>
-     
-
-        <h1>Section Heading</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
-      </div>
-
-
-    <!-- Image Section - set the background image for the header in the line below -->
-    <section class="py-5 bg-image-full" style="background-image: url('https://unsplash.it/1900/1080?image=1081');">
-      <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
-      <div style="height: 200px;"></div>
     </section>
+    <section class="mais-noticias text-center bg-light">
+        <div class="container-fluid p-5">
+            <div class="mt-5 mb-2 text-left "><span class="font-weight-bold">Veja Tambem</span></div>
+            <div class="row">
+                <div class="col-lg-3 col-xl-3 offset-xl-0">
+                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class="img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-1.png">
+                        <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
+                        <h5 class="text-left">Título Post</h5>
+                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
+                    </div>
+                </div>
 
-    <!-- Content section -->
-    <section class="py-5">
-      <div class="container">
-        <h1>Section Heading</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
-      </div>
+                <div class="col-lg-3">
+                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class=" img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-2.png">
+                    <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
+                        <h5 class="text-left">Título Post</h5>
+                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class="img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-3.png">
+                    <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
+                        <h5 class="text-left">Título Post</h5>
+                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class="img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-4.png">
+                    <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
+                        <h5 class="text-left">Título Post</h5>
+                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-xl-3 offset-xl-0">
+                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class="img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-1.png">
+                        <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
+                        <h5 class="text-left">Título Post</h5>
+                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class=" img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-2.png">
+                    <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
+                        <h5 class="text-left">Título Post</h5>
+                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class="img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-3.png">
+                    <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
+                        <h5 class="text-left">Título Post</h5>
+                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class="img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-4.png">
+                    <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
+                        <h5 class="text-left">Título Post</h5>
+                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
 
 <?php get_footer(); ?>
