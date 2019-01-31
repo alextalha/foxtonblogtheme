@@ -48,7 +48,7 @@
     </section>
     <section class="mais-noticias text-center bg-light">
         <div class="container-fluid p-5">
-            <div class="mt-5 mb-2 text-left "><span class="font-weight-bold">Veja Tambem</span></div>
+            <div class="mt-5 mb-2 text-left"><h4>Veja Tambem</h4></div>
             <div class="row">
                 <div class="col-lg-3 col-xl-3 offset-xl-0">
                     <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class="img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-1.png">
@@ -112,7 +112,7 @@
                     </div>
                 </div>
             </div>
-
+            <div class="text-center mb-4 mt-4"><span><a class="ver-mais" href="#" > TODOS </a></span></div>
         </div>
     </section>
 
