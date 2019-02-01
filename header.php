@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/header.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/home.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/base.css">
-    <?php wp_head(); ?>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/categoria.css">
+    <?php 
+    
+    wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> >
