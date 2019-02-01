@@ -108,6 +108,8 @@
 
     <script src="<?php echo get_template_directory_uri() ?>/assets/js/jquery.min.js"></script>
     <script src="<?php echo get_template_directory_uri()?>/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo get_template_directory_uri() ?>/assets/js/header.js"></script>
+
 </body>
 
 </html>
