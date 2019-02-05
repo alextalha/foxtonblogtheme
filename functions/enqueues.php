@@ -23,4 +23,5 @@ function enqueues() {
 		wp_enqueue_script('comment-reply');
 	}
 }
+
 add_action('wp_enqueue_scripts', 'enqueues', 100);

@@ -11,110 +11,125 @@
 <?php  get_header() ?>
 
     <!-- Sessão do Conteúdo-->
+    <?php 
+    $feature = new WP_Query(array(
+            'post_type' => 'post',
+            'posts_per_page' => 1, 
+            'post_status' => 'publish'
+        )
+     );
+    
+    if( $feature->have_posts() ) :
+        while ( $feature->have_posts() ) : $feature->the_post();
+        $url_feature = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'destaque' );
+        $category = get_the_category(get_the_ID());
+        ?>
+       
+        <header class="masthead text-white text-center" style="background:url('<?php  echo $url_feature[0]; ?>')no-repeat center center;background-size:cover;">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 mb-3 mx-auto text-left"><span class="categoria"><?php echo $category[0]->cat_name; ?></span></div>
+                    <div class="col-xl-12 mx-auto">
+                        <h1 class="mb-5"><?php the_excerpt(); ?> <br><br></h1>
+                    </div>
+                </div>
+            </div>
+        </header> 
+        <?php 
 
-    <header class="masthead text-white text-center" style="background:url('<?php echo get_template_directory_uri() ?>/assets/img/destaque.png')no-repeat center center;background-size:cover;">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12 mb-3 mx-auto text-left"><span class="categoria">Categoria</span></div>
-                <div class="col-xl-12 mx-auto">
-                    <h1 class="mb-5"><p class="text-justify destaque">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non faucibus leo. Ut tristique finibus est et viverra. Aliquam fringilla sapien sed mi sagittis vestibulum non&nbsp;<br><br></p></h1>
-                </div>
-            </div>
-        </div>
-    </header>
+        endwhile;
+        /* Restore original Post Data */
+        wp_reset_postdata();
+    else :
+        // no posts found
+    endif;
+
+    ?>
+
     <section class="showcase">
-        <div class="container-fluid p-0">
+    <div class="container-fluid p-0">
+    
+    <?php 
+        $secondFeature = new WP_Query( 'showposts=1&offset=1' );
+        if( $secondFeature->have_posts() ) :
+            while ( $secondFeature->have_posts() ) : $secondFeature->the_post();
+            $url_feature = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'segundoDestaque' );
+            $category = get_the_category(get_the_ID());
+
+            ?>
+
             <div class="row no-gutters">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image:url('<?php echo get_template_directory_uri() ?>/assets/img/imagem2.png');"><span></span></div>
-                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
-                  <div class="text-left mb-4"><span class="categoria">Categoria</span></div>
-                      <h6 class="mt-4">JOSÉ CAMARANO</h6>
-                      <p class="lead mb-0 mt-5 segundo-destaque"> José Camarano é mineiro, mas sua alma, carioca. Multifacetado, coleciona talentos e conquistas: é stylist, diretor de conteúdo para web, consultor de moda e lifestyle, dono da agencia criativa Hale.ag... e o que mais a sua criatividade permitir que ele seja. Depois de uma temporada internacional em Nova York, com direito a um período pé no freio se reconectando com a natureza no Havaí, Camarano está de volta ao Brasil e contou pra gente como ele enxerga e reconhece o sucesso.</p>
-                      <div class="text-left mb-4 mt-4"><span><a class="ver-mais" href="#" > VER MAIS </a></span></div>
-                </div>
-                
+                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image:url('<?php  echo $url_feature[0]; ?>');"><span></span></div>
+                    <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                        <div class="text-left mb-4"><span class="categoria"><?php echo $category[0]->cat_name; ?></span></div>
+                        <h6 class="mt-4"><?php the_title() ?> </h6>
+                        <p class="lead mb-0 mt-5 segundo-destaque"><?php the_excerpt(); ?></p>
+                        <div class="text-left mb-4 mt-4"><span><a class="ver-mais" href="<?php the_permalink() ?>" > VER MAIS </a></span></div>
+                    </div>
             </div>
-            <div class="row no-gutters">
-                <div class="col-lg-6 text-white showcase-img" style="background-image:url('<?php echo get_template_directory_uri() ?>/assets/img/imagem1.png');"><span></span></div>
-                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
-                <div class="text-left mb-4 mt-5"><span class="categoria">Categoria</span></div>
-                    <h6 class="mt-4">JOSÉ CAMARANO</h6>
-                    <p class="lead mb-0 mt-5 segundo-destaque"> José Camarano é mineiro, mas sua alma, carioca. Multifacetado, coleciona talentos e conquistas: é stylist, diretor de conteúdo para web, consultor de moda e lifestyle, dono da agencia criativa Hale.ag... e o que mais a sua criatividade permitir que ele seja. Depois de uma temporada internacional em Nova York, com direito a um período pé no freio se reconectando com a natureza no Havaí, Camarano está de volta ao Brasil e contou pra gente como ele enxerga e reconhece o sucesso.</p>
-                    <div class="text-left mb-4 mt-4"><span><a class="ver-mais" href="#" > VER MAIS </a></span></div>
+        <?php  endwhile;
+            /* Restore original Post Data */
+                wp_reset_postdata();
+            else :
+                // no posts found
+        endif;
+
+        $thirdFeature = new WP_Query( 'showposts=1&offset=2' );
+            
+        if( $thirdFeature->have_posts() ) :
+            while ( $thirdFeature->have_posts() ) : $thirdFeature->the_post();
+                $url_feature = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'segundoDestaque' );
+                $category = get_the_category(get_the_ID());
+        ?>
+                <div class="row no-gutters">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image:url('<?php echo $url_feature[0]; ?>');"><span></span></div>
+                    <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                        <div class="text-left mb-4 mt-5"><span class="categoria"><?php echo $category[0]->cat_name; ?></span></div>
+                        <h6 class="mt-4"><?php the_title() ?></h6>
+                        <p class="lead mb-0 mt-5 segundo-destaque"><?php the_excerpt(); ?> </p>
+                        <div class="text-left mb-4 mt-4"><span><a class="ver-mais" href="<?php the_permalink() ?>" > VER MAIS </a></span></div>
+                    </div>
                 </div>
-            </div>
-        </div>
+        <?php 
+            endwhile;
+                /* Restore original Post Data */
+                wp_reset_postdata();
+            else :
+                // no posts found
+            endif;
+        ?>
+
+    </div>
     </section>
+
     <section class="mais-noticias text-center bg-light">
         <div class="container-fluid p-5">
             <div class="mt-5 mb-2 text-left"><h4>Veja Tambem</h4></div>
-            <div class="row">
-                <div class="col-lg-3 col-xl-3 offset-xl-0">
-                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class="img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-1.png">
-                        <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
-                        <h5 class="text-left">Título Post</h5>
-                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
-                    </div>
-                </div>
 
-                <div class="col-lg-3">
-                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class=" img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-2.png">
-                    <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
-                        <h5 class="text-left">Título Post</h5>
-                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class="img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-3.png">
-                    <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
-                        <h5 class="text-left">Título Post</h5>
-                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class="img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-4.png">
-                    <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
-                        <h5 class="text-left">Título Post</h5>
-                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
-                    </div>
-                </div>
-            </div>
+            <?php 
+                $morePosts = new WP_Query( 'showposts=8&offset=3' );
 
-            <div class="row">
-                <div class="col-lg-3 col-xl-3 offset-xl-0">
-                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class="img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-1.png">
-                        <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
-                        <h5 class="text-left">Título Post</h5>
-                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
-                    </div>
-                </div>
+                if( $morePosts->have_posts() ) :
+                $i=0; 
+                    while ( $morePosts->have_posts() ) : $morePosts->the_post();
+                    $url_feature = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'verMais' );
+                    $category = get_the_category(get_the_ID());
+                    
+                    include(locate_template('template-part/vermais.php'));
 
-                <div class="col-lg-3">
-                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class=" img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-2.png">
-                    <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
-                        <h5 class="text-left">Título Post</h5>
-                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class="img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-3.png">
-                    <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
-                        <h5 class="text-left">Título Post</h5>
-                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="mx-auto mais-noticias-item mb-5 mb-lg-0"><img class="img-fluid mb-3" src="<?php echo get_template_directory_uri() ?>/assets/img/mais-4.png">
-                    <div class="mb-4 mt-2 text-left"><span class="tags">#LEIA-SE</span></div>
-                        <h5 class="text-left">Título Post</h5>
-                        <p class="font-weight-light text-left mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales venenatis ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vehicula ligula at sapien</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mb-4 mt-4"><span><a class="ver-mais" href="#" > TODOS </a></span></div>
+                    $i++;
+                endwhile;
+                    /* Restore original Post Data */
+                    wp_reset_postdata();
+                else :
+                    // no posts found
+                endif;
+
+            ?>
+            
         </div>
+        <div class="text-center mb-4 mt-4"><span><a class="ver-mais" href="#" > TODOS </a></span></div>
     </section>
 
 <?php get_footer(); ?>
-
